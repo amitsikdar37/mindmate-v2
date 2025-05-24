@@ -31,6 +31,12 @@
                     </button>
                 </div>
             </li>
+            <li>
+                <button id="parentIdBtn" class="flex items-center gap-1 px-4 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 transition text-white font-semibold focus:outline-none focus:ring-2 focus:ring-pink-300">
+                    Parent's ID
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+            </li>
         </ul>
     </nav>
     <div class="flex h-[calc(100vh-80px)]">
@@ -79,7 +85,18 @@
     <script type="module" src="script.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // ... all your event listener code here ...
+        const parentIdBtn = document.getElementById('parentIdBtn');
+        parentIdBtn?.addEventListener('click', () => {
+            const password = prompt('Enter parent password:');
+            // For demo, use a hardcoded password and parent ID
+            const correctPassword = 'parent123';
+            const parentId = 'PARENT-XYZ-001';
+            if (password === correctPassword) {
+                alert(`Parent's ID: ${parentId}`);
+            } else if (password !== null) {
+                alert('Incorrect password.');
+            }
+        });
     });
     </script>
 </body>
