@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMate - Your Mental Wellness Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" class="logo">
+                <span class="logo-accent">Mind</span>Mate
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Side - Animated Background -->
+        <div class="hidden md:flex md:w-1/2 gradient-bg items-center justify-center p-12">
+            <div class="text-white text-center">
+                <h1 class="text-4xl font-bold mb-4">Welcome to MindMate</h1>
+                <p class="text-lg opacity-90">Your personal mental wellness companion</p>
+            </div>
+        </div>
+
+        <!-- Right Side - Login/Register Form -->
+        <div class="w-full md:w-1/2 flex items-center justify-center p-6">
+            <div class="w-full max-w-md">
+                <div class="glass-card rounded-2xl p-8">
+                    <!-- Form Toggle -->
+                    <div class="flex justify-center mb-8">
+                        <button id="loginToggle" class="form-toggle-btn active">Login</button>
+                        <button id="registerToggle" class="form-toggle-btn">Register</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="space-y-4">
+                        <div>
+                            <input type="email" placeholder="Email" class="form-input" required>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" class="form-input" required>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Login</button>
+                        <p class="text-center text-white/60 mt-4">
+                            Don't have an account? 
+                            <a href="#" id="showRegister" class="auth-link">Register instead</a>
+                        </p>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form id="registerForm" class="space-y-4 hidden">
+                        <div>
+                            <input type="text" placeholder="Full Name" class="form-input" required>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" class="form-input" required>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" class="form-input" required>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Confirm Password" class="form-input" required>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Register</button>
+                        <p class="text-center text-white/60 mt-4">
+                            Already have an account? 
+                            <a href="#" id="showLogin" class="auth-link">Login instead</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

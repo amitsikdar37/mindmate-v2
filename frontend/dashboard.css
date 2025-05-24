@@ -1,0 +1,175 @@
+/* Dashboard-specific styles */
+.dashboard-bg {
+    background: linear-gradient(135deg, #a5b4fc 0%, #67e8f9 100%);
+    min-height: 100vh;
+}
+.sidebar-glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid rgba(255,255,255,0.12);
+}
+.chat-glass {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+}
+.message-bubble {
+    max-width: 70%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.25rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
+    position: relative;
+    animation: fadeInUp 0.4s;
+}
+.message-bubble.ai {
+    background: linear-gradient(120deg, #a5b4fc 60%, #67e8f9 100%);
+    color: #22223b;
+    border-bottom-left-radius: 0.25rem;
+}
+.message-bubble.user {
+    background: linear-gradient(120deg, #818cf8 60%, #06b6d4 100%);
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.message-timestamp {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.15rem;
+    text-align: right;
+}
+.sidebar-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #818cf8;
+    margin-bottom: 1rem;
+}
+.sidebar-btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: #6366f1;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px 0 rgba(99,102,241,0.15);
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+}
+.sidebar-btn:hover {
+    background: #4f46e5;
+}
+.sidebar-btn.emergency {
+    background: #ef4444;
+    box-shadow: 0 0 16px 0 #ef4444aa;
+}
+.sidebar-btn.emergency:hover {
+    background: #dc2626;
+}
+.chat-input-glass {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(8px);
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
+}
+
+/* Past Conversations Section */
+.past-conv-title {
+    color: #6366f1;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+.past-conv-list a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.25);
+    color: #3730a3;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08);
+    border: 1.5px solid #a5b4fc;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    margin-bottom: 0.5rem;
+}
+.past-conv-list a:hover, .past-conv-list a.active {
+    background: #6366f1;
+    color: #fff;
+    border-color: #6366f1;
+}
+
+/* Avatar upload overlay */
+.avatar-upload {
+    position: relative;
+    display: inline-block;
+}
+.avatar-upload input[type="file"] {
+    display: none;
+}
+.avatar-upload-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #6366f1;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(99,102,241,0.18);
+    border: 2px solid #fff;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+.avatar-upload-label:hover {
+    background: #4f46e5;
+}
+
+/* Connect Dropdown Styles */
+#connectDropdown {
+    min-width: 12rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    border: none;
+    background: #fff;
+    transition: opacity 0.2s, transform 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+#connectDropdown.show {
+    opacity: 1;
+    transform: scale(100%);
+    pointer-events: auto;
+}
+#connectDropdown button {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3730a3;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+#connectDropdown button:hover {
+    background: #eef2ff;
+    color: #6366f1;
+}
+@media (max-width: 640px) {
+    #connectDropdown {
+        right: 0;
+        left: auto;
+        min-width: 10rem;
+    }
+} 
