@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MindMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #a5b4fc 0%, #67e8f9 100%); min-height: 100vh; }
+        .glass-card { background: rgba(255,255,255,0.15); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18); backdrop-filter: blur(8px); border-radius: 2rem; }
+        .form-input { background: rgba(255,255,255,0.7); border-radius: 0.75rem; border: none; padding: 0.75rem 1rem; width: 100%; margin-bottom: 1rem; font-size: 1rem; }
+        .btn-primary { background: #6366f1; color: #fff; border: none; border-radius: 0.75rem; padding: 0.75rem 1rem; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+        .btn-primary:hover { background: #4f46e5; }
+        .auth-link { color: #6366f1; font-weight: 500; text-decoration: underline; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col justify-center items-center">
+        <div class="w-full max-w-md">
+            <div class="glass-card p-10">
+                <h2 class="text-2xl font-bold text-center mb-6 text-indigo-700">Create Your Account</h2>
+                <form id="registerForm" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="form-input" required>
+                    <input type="email" placeholder="Email" class="form-input" required>
+                    <input type="password" placeholder="Password" class="form-input" required>
+                    <input type="password" placeholder="Confirm Password" class="form-input" required>
+                    <button type="submit" class="btn-primary w-full">Register</button>
+                </form>
+                <p class="text-center text-gray-700 mt-4">
+                    Already have an account?
+                    <a href="index.html" class="auth-link">Login instead</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would send registration data to the backend
+        // For now, just redirect to login
+        window.location.href = 'dashboard.html';
+    });
+    </script>
+</body>
+</html> 
